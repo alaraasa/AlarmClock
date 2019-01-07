@@ -37,3 +37,12 @@ class AlarmComponent {
         return this.isRepeatable == true ? true : false;
     }
 }
+
+function renderTemplate( alarm: AlarmComponent )
+{
+    let element = "<div>" + 
+    "<input type='time'>" +
+    "<input type='checkbox' name='repeatable'>Repeat" +
+    "</div>";
+    return document.body.innerHTML = element ;
+}
