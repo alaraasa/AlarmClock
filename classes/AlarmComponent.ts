@@ -2,12 +2,19 @@ class AlarmComponent {
     private isRepeatable: boolean;
     private SoundMakerComponent: SoundMakerComponent;
     private ClockComponent: ClockComponent;
+    private alarmTime: string;
 
-    constructor( clock: ClockComponent, sound: SoundMakerComponent, repeatable: boolean )
+    constructor( clock: ClockComponent, sound: SoundMakerComponent, repeatable: boolean, time: string )
     {
         this.SoundMakerComponent = sound;
         this.ClockComponent = clock;
         this.isRepeatable = repeatable;
+        this.alarmTime = time;
+    }
+
+    public setAlarmTime( time: string )
+    {
+        this.alarmTime = time;
     }
 
     public setClock( clock: ClockComponent )
@@ -23,5 +30,10 @@ class AlarmComponent {
     public setIsRepeatable( isRepeatable: boolean )
     {
         this.isRepeatable = isRepeatable;
+    }
+
+    public isAlarmRepeatable()
+    {
+        return this.isRepeatable == true ? true : false;
     }
 }
